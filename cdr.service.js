@@ -1,20 +1,20 @@
 
 (function(window, angular) {
     'use strict';
-    angular.module('http.polyfill')
-        .service('HttpPolyfill', HttpPolyfill);
+    angular.module('cdr')
+        .service('CdrService', CdrService);
 
-    HttpPolyfill.$inject = ['RequestBuilder', 'IframeManager']
+    CdrService.$inject = ['RequestBuilder', 'IframeManager']
     
-    function HttpPolyfill(RequestBuilder, IframeManager) {
+    function CdrService(RequestBuilder, IframeManager) {
         
-        var httpPolyfill = {
+        var cdrService = {
             init: init,
             get: get,
             post: post,
         };
         
-        return httpPolyfill;
+        return cdrService;
 
         function init(bridgePath, cb){
             IframeManager.register(bridgePath, cb);
@@ -27,7 +27,7 @@
         }
         function doRequest(verb, url, params, body, headers, cb){
             //debugger;
-            if (IframeManager.bridge == null) return cb('connector not initialized, please run init(bridgePath, callbackFn) function');
+            if (IframeManager.bridge == null) return cb('doRequest: connector not initialized, please run init(bridgePath, callbackFn) function');
                         
             var request = RequestBuilder.build(url, verb, params, body, headers);
             

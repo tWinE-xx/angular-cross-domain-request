@@ -1,7 +1,7 @@
 (function(window, angular){
     'use strict';
     
-    angular.module('http.polyfill')
+    angular.module('cdr')
         .factory('IframeManager', IframeManager);
 
     IframeManager.$inject = [];
@@ -51,12 +51,12 @@
         }
 
         function postMessage(options, cb){
+            if (this.bridge == null) return cb('postMessage: connector not initialized, please run init(bridgePath, callbackFn) function');
             if (console && console.log && window.http_polyfill_debug) 
                     console.log('client', 'postMessage', options);
             var origin = extractProtocol(options.url)+'//'+ extractDomain(options.url);
-            if (!this.bridge)
+            if (!this.bridge || !this.bridge.contentWindow)
                 return cb('postMessage: bridge is not loaded');
-            var iframe = this.bridge;
             var guid = createGuid();
             //debugger;
             queue.add({guid: guid, cb:cb});
@@ -76,6 +76,8 @@
             //run callck to client
             if (returnedOperation)
                 returnedOperation.cb(data.result.err, data.result.data);
+            else if (console && console.log)
+                console.log('queue missing cb', data);
         }
         //
         var resiterReceiveMessageCallback = function(to, url){

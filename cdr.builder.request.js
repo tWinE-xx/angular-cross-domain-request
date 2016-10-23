@@ -1,6 +1,6 @@
 (function(window, angular) {
     'use strict';
-    angular.module('http.polyfill', [])
+    angular.module('cdr', [])
             .factory('RequestBuilder', RequestBuilder);
     
     RequestBuilder.$inject = [];
