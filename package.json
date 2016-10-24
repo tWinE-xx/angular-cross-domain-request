@@ -2,7 +2,7 @@
   "name": "angular-cross-domain-request",
   "version": "0.0.1",
   "description": "An angular.js service for making cross-domain requests using iframe and post message API",
-  "main": "cdr.module.js",
+  "main": "dist/cdr.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

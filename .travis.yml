@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - '4'
+before_script:
+  - 'npm install -g http-server gulp'
+  - 'npm install' # install npm packages
+
+after_script:
+  - 'gulp' # or other command for build, run tests, etc
+
+after_success:
+notifications:
+  email:
+  - bir.yuval@gmail.com
