@@ -32,6 +32,6 @@ server = http.createServer( function(req, res) {
 });
 
 port = 8081;
-host = '127.0.0.1';
+host = 'localhost';
 server.listen(port, host);
 console.log('Listening at http://' + host + ':' + port);
