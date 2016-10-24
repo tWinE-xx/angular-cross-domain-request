@@ -6,6 +6,7 @@
         <script src="http://localhost:8081/connect.client.js"></script>
         <script>
             var baseApiUri = 'http://localhost:8081';
+            var bridgeUri = 'http://localhost:8081/bridge.html'
             var optionsGet = {
                 url: baseApiUri+'',
                 type: 'GET',
@@ -22,7 +23,7 @@
                 },
                 data: {"input": "blah"}
             }
-            window.connect.client.init(baseApiUri, function(iframe){
+            window.connect.client.init(bridgeUri, function(iframe){
                 window.connect.client.doRequest(optionsGet, function(err, data){
                     var div = window.document.body.appendChild('div');
                     div.innerHtml = err + '<br>' + data;

@@ -7,7 +7,7 @@
     //load iframe on init
     window.connect.client.init = function(iframeLocationUrl, cb){
         if (!window.connect.client.iframe){           
-            var frameUrl = iframeLocationUrl+'/bridge.html';
+            var frameUrl = iframeLocationUrl;
             window.connect.utils.loadFrame(frameUrl, function(iframe){
                 //check if loaded - not really working..
                 if (!iframe) {

@@ -20,22 +20,38 @@ open browser and browse to http://localhost:8080
 ## Usage
 
 ```js
-const Pageres = require('pageres');
-
-const pageres = new Pageres({delay: 2})
-	.src('yeoman.io', ['480x320', '1024x768', 'iphone 5s'], {crop: true})
-	.src('todomvc.com', ['1280x1024', '1920x1080'])
-	.src('data:text/html;base64,PGgxPkZPTzwvaDE+', ['1024x768'])
-	.dest(__dirname)
-	.run()
-	.then(() => console.log('done'));
+var baseApiUri = 'http://localhost:8081';
+var optionsGet = {
+    url: baseApiUri+'',
+    type: 'GET',//or POST
+    headers: {
+        'Content-Type':'application/json'
+    }
+}
+//init loades the iframe from the other domain and setup post messaging API 
+window.connect.client.init(baseApiUri, function(iframe){
+    //post message the iframe which makes a regular ajax request since has same domain
+    window.connect.client.doRequest(optionsGet, function(err, data){
+        //handle error
+        if err (alert(err));
+        //use response
+        else alert(data);
+    });
+});
+```
 
 ## API
 
-### Pageres([options])
+### connect.client.init(iframeLocationUrl, cb)
+#### loads other domains iframe
+##### iframeLocationUrl: url to the bridge.html which if the iframe loaded
+##### cb: callback(err, data) function with error and data
 
-#### options
+### connect.client.listen(cb)
+#### sets spot messaging send recieve event in place
+##### cb: callback(err, data) function with error and data
 
-##### delay
+
+
 
 
