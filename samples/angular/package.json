@@ -1,0 +1,15 @@
+{
+  "name": "angular-http-cross-domain-sample",
+  "version": "1.0.0",
+  "description": "A sample angular application that demonestrate the usage of the package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yuval Birenboum <bir.yuval@gmail.com> (https://il.linkedin.com/in/yuval-birenboum-b3565b12)",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-cross-domain-request": "0.0.1"
+  }
+}
