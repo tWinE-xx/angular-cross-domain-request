@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - '4'
 before_script:
-  - 'cd $TRAVIS_BUILD_DIR/project'
+  - 'cd $TRAVIS_BUILD_DIR'
   - 'echo "=============================="'
   - 'npm install -g http-server gulp'
   - 'npm install' # install npm packages
