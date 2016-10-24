@@ -2,6 +2,8 @@ language: node_js
 node_js:
   - '4'
 before_script:
+  - 'ls'
+  - 'echo "=============================="'
   - 'npm install -g http-server gulp'
   - 'npm install' # install npm packages
   - 'npm install -g http-server'
