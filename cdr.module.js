@@ -1,5 +1,5 @@
 (function(window, angular){
-    'use strict';
+    //'use strict';
     
     angular.module('cdr',[]);
 

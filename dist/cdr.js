@@ -1,12 +1,12 @@
 (function(window, angular){
-    'use strict';
+    //'use strict';
     
     angular.module('cdr',[]);
 
 })(window, window.angular);
 
 (function(window, angular) {
-    'use strict';
+    //'use strict';
     angular.module('cdr')
         .service('CdrService', CdrService);
 
@@ -45,7 +45,7 @@
 
 })(window, window.angular);
 (function(window, angular){
-    'use strict';
+    //'use strict';
     
     angular.module('cdr')
         .factory('IframeManager', IframeManager);
@@ -187,7 +187,7 @@
     }
 })(window, window.angular);
 (function(window, angular) {
-    'use strict';
+    //'use strict';
     angular.module('cdr', [])
             .factory('RequestBuilder', RequestBuilder);
     

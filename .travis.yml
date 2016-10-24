@@ -6,14 +6,15 @@ before_script:
   - 'echo "=============================="'
   - 'npm install -g http-server gulp'
   - 'npm install' # install npm packages
+  - 'gulp'
   - 'npm install -g http-server'
   - 'http-server -p 8080 &'
   - 'cd $TRAVIS_BUILD_DIR/tests/bridge_stub'
   - 'node bridge.server.test &'
-
+  - 'npm install phantom-jasmine -g'
+script:
+  - 'gulp test'
 after_script:
-  - 'gulp' # or other command for build, run tests, etc
-
 after_success:
 notifications:
   email:

@@ -9,12 +9,21 @@ var params = {
     sources: ['cdr.module.js', 'cdr.service.js', 'cdr.manager.iframe.js', 'cdr.builder.request.js']
 }
 
+var Server = require('karma').Server;
+
+gulp.task('test', function (done) {
+  return new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
+
 gulp.task('js-fef', function(){
     return gulp.src(params.sources)
         .pipe(gp_sourcemaps.init())
         .pipe(gp_concat('cdr.js'))
         .pipe(gulp.dest(params.dist))
-        .pipe(gp_rename('cd.min.js'))
+        .pipe(gp_rename('cdr.min.js'))
         .pipe(gp_uglify())
         .pipe(gp_sourcemaps.write('./'))
         .pipe(gulp.dest(params.dist));
