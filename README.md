@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+!https://travis-ci.org/tWinE-xx/angular-cross-domain-request.svg?branch=master!:https://travis-ci.org/tWinE-xx/angular-cross-domain-request
+
+>>>>>>> origin/master
 # angular-http-cross-domain
 <p align="center">
     <a href="https://travis-ci.org/badges/shields">
