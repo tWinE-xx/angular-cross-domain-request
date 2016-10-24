@@ -4,6 +4,10 @@ node_js:
 before_script:
   - 'npm install -g http-server gulp'
   - 'npm install' # install npm packages
+  - 'npm install -g http-server'
+  - 'http-server -p 8080'
+  - 'cd /tests/bridge_stub'
+  - 'node bridge.server.test'
 
 after_script:
   - 'gulp' # or other command for build, run tests, etc
