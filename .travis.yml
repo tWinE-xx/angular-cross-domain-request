@@ -8,7 +8,7 @@ before_script:
   - 'npm install' # install npm packages
   - 'npm install -g http-server'
   - 'http-server -p 8080 &'
-  - 'cd /tests/bridge_stub'
+  - 'cd $TRAVIS_BUILD_DIR/tests/bridge_stub'
   - 'node bridge.server.test &'
 
 after_script:
