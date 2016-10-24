@@ -43,13 +43,13 @@ window.connect.client.init(baseApiUri, function(iframe){
 ## API
 
 ### connect.client.init(iframeLocationUrl, cb)
-#### loads other domains iframe
-##### iframeLocationUrl: url to the bridge.html which if the iframe loaded
-##### cb: callback(err, data) function with error and data
+##### loads other domains iframe
+iframeLocationUrl: url to the bridge.html which if the iframe loaded
+cb: callback(err, data) function with error and data
 
 ### connect.client.listen(cb)
-#### sets spot messaging send recieve event in place
-##### cb: callback(err, data) function with error and data
+##### sets spot messaging send recieve event in place
+cb: callback(err, data) function with error and data
 
 
 
