@@ -24,7 +24,8 @@
             }
             window.connect.client.init(baseApiUri, function(iframe){
                 window.connect.client.doRequest(optionsGet, function(err, data){
-                    debugger;
+                    var div = window.document.body.appendChild('div');
+                    div.innerHtml = err + '<br>' + data;
                 });
             });
         </script>
