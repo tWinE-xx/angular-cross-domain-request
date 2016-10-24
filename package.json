@@ -4,7 +4,6 @@
   "description": "An angular.js service for making cross-domain requests using iframe and post message API",
   "main": "dist/cdr.js",
   "scripts": {
-    "test": "ls && exit 0"
   },
   "keywords": [
     "angular",
