@@ -11,9 +11,7 @@ describe("CdrService", function() {
     beforeEach(function() {
         
     });
-    console.log('======================================================')
-    console.log(CdrService);
-    console.log('======================================================')
+    
     it("should add iframe", function(done) {
         var url = 'http://localhost:8081/bridge.html';
         IframeManager.register(url, function(iframe){

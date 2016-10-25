@@ -25,7 +25,7 @@
                     request = new ActiveXObject('Microsoft.XMLHTTP');
                 } 
                 catch (e) {
-                    handleError('could not create xhr request '+e);
+                    window.connect.utils.handleError('could not create xhr request '+e);
                 }
             }
         }
@@ -47,7 +47,7 @@
                 if(request.status === 200) { // complete	
                     return cb(null, JSON.parse(request.responseText));
                 } else {
-                    handleError(e);          
+                    window.connect.utils.handleError(e);          
                     return cb(e, null);
                 }
             }
