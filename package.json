@@ -1,6 +1,6 @@
 {
   "name": "angular-cross-domain-request",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An angular.js service for making cross-domain requests using iframe and post message API",
   "main": "dist/cdr.js",
   "scripts": {
